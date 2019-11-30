@@ -1,10 +1,28 @@
 <script>
-    export let name;
+    export let item;
 </script>
 
-<style>
-</style>
+<div class="sidemenu-sub-menu-header">
 
-<main>
-	SM Header {name}
-</main>
+{#if item.user}
+
+<div class="sidemenu-sub-menu-header--user-img">
+<img src={item.user.imgUrl} alt={item.user.name}/>
+
+</div>
+
+<div class="sidemenu-sub-menu-header--user">
+<div>{item.user.name}</div>
+<div class="sidemenu-sub-menu-header--user-status">
+    <i class="material-icons">check_circle</i>
+    <span>{item.user.status}</span>
+</div>
+</div>
+
+
+{:else}{item.name}{/if}
+
+
+
+
+</div>

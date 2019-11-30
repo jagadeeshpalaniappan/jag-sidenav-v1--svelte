@@ -6,6 +6,9 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
+// sass support:
+import autoPreprocess from "svelte-preprocess";
+
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
@@ -24,7 +27,8 @@ export default {
       // a separate file — better for performance
       css: css => {
         css.write("public/bundle.css");
-      }
+      },
+      preprocess: autoPreprocess()
     }),
 
     // If you have external dependencies installed from

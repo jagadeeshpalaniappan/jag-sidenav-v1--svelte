@@ -1,25 +1,42 @@
 <script>
-    import SideNavSubMenuHeader from "./SideNavSubMenuHeader.svelte";
-    import SideNavSubMenuItem from "./SideNavSubMenuItem.svelte";
-    export let item;
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
+  import SideNavSubMenuHeader from "./SideNavSubMenuHeader.svelte";
+  import SideNavSubMenuItemSearch from "./SideNavSubMenuItemSearch.svelte";
+  import SideNavSubMenuItem from "./SideNavSubMenuItem.svelte";
+  export let item;
+
+  $: filteredItems = item.items;
+
+  const onSelectMenu = e => {
+    dispatch("selectMenu", e.detail);
+  };
+
+  const onSearch = e => {
+    const searchKeyword = e.detail.toLowerCase().trim();
+    console.log("onSearch", searchKeyword);
+    if (searchKeyword && searchKeyword !== "") {
+      filteredItems = item.items.filter(item =>
+        item.name.toLowerCase().startsWith(searchKeyword)
+      );
+    } else {
+      filteredItems = [...item.items];
+    }
+  };
 </script>
 
-<style>
-  main {
-    font-family: sans-serif;
-    text-align: center;
-    color: red;
-  }
-</style>
 
-<main>
-	<h1>Sub Menu</h1>
 
-    <SideNavSubMenuHeader name={item.name} />
+<div class="sidemenu-sub-menu" class:hide={!item.hide}>
+  <SideNavSubMenuHeader item={item}/>
+  <div class="sidemenu-sub-menu-body">
 
-    {#if item.items.length !== 0}
-        {#each item.items as item}
-        <SideNavSubMenuItem item={item} />
-        {/each}
-    {/if}
-</main>
+    {#if !item.hideSearch}<SideNavSubMenuItemSearch on:search={onSearch}/>{/if}
+
+    {#each filteredItems as item}
+      <SideNavSubMenuItem item={item} on:selectMenu={onSelectMenu}/>
+    {/each}
+
+  </div>
+</div>
