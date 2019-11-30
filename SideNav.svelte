@@ -10,14 +10,14 @@
     console.log("onSelectMainMenu:mainMenu", mainMenu);
     selectedMainMenu = {
       ...mainMenu,
-      hide: !mainMenu.hide
+      show: !mainMenu.show
     };
     console.log("onSelectMainMenu:selectedMainMenu", selectedMainMenu);
 
     items = items.map(item => ({
       ...item,
       active: item.id === selectedMainMenu.id,
-      hide: !item.hide && item.id === selectedMainMenu.id
+      show: !item.show && item.id === selectedMainMenu.id
     }));
 
     console.log("onSelectMainMenu--end", items);
@@ -37,7 +37,7 @@
       } else {
         return {
           ...item,
-          // hide: false,
+          // show: false,
           items: item.items.map(item => ({
             ...item,
             active: false

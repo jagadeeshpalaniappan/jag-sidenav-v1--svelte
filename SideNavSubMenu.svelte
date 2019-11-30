@@ -28,7 +28,7 @@
 
 
 
-<div class="sidemenu-sub-menu" class:hide={!item.hide}>
+<div class="sidemenu-sub-menu" class:hide={!item.show}>
   <SideNavSubMenuHeader item={item}/>
   <div class="sidemenu-sub-menu-body">
 
