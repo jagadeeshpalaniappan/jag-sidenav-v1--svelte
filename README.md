@@ -1,3 +1,17 @@
+## `jag`-sidenav (svelte component)
+
+Style Guide: [Jag SideNav Style Guide](https://github.com/jagadeeshpalaniappan/jag-sidenav-v1) 
+
+Implementation: **Svelte**
+
+Sidenav with **scalable design** principles which helps enterprise apps to bring into one suite
+
+Code: [Sandbox](https://codesandbox.io/s/github/jagadeeshpalaniappan/jag-sidenav-v1--svelte) 
+
+![alt text](https://raw.githubusercontent.com/jagadeeshpalaniappan/jag-sidemenu-v1-css/master/design.png)
+
+
+
 # svelte app
 
 This is a project template for [Svelte](https://svelte.technology) apps. It lives at https://github.com/sveltejs/template.
