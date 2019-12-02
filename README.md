@@ -1,9 +1,3 @@
-# `jag`-sidenav (svelte component)
-
-Style Guide: [Jag SideNav Style Guide](https://github.com/jagadeeshpalaniappan/jag-sidenav-v1) 
-
-Implementation: **Svelte**
-
 # `jag`- Sidenav Svelte Component 
 
 Design Guide: [Jag SideNav Style](https://github.com/jagadeeshpalaniappan/jag-sidenav-v1) 
