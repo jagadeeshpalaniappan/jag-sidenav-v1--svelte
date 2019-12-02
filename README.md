@@ -6,7 +6,7 @@ Implementation: **Svelte**
 
 Sidenav with **scalable design** principles which helps enterprise apps to bring into one suite
 
-Code: [Sandbox](https://codesandbox.io/s/github/jagadeeshpalaniappan/jag-sidenav-v1--svelte) 
+Code & Demo : [Sandbox](https://codesandbox.io/s/github/jagadeeshpalaniappan/jag-sidenav-v1--svelte) 
 
 ![alt text](https://raw.githubusercontent.com/jagadeeshpalaniappan/jag-sidemenu-v1-css/master/design.png)
 
